@@ -20,7 +20,7 @@ function QuestionCardHeader({
   answersCount,
 }: IProps) {
   return (
-    <div className="flex items-center justify-between px-4 py-2 bg-white rounded">
+    <div className="flex items-center justify-between px-4 py-2 bg-white rounded shadow">
       <div className="flex items-center gap-4">
         <Avatar src={avatar} alt={fullName} variant="rounded" />
         <h2 className="text-h2 font-bold">{title}</h2>

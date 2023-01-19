@@ -1,4 +1,4 @@
-import { mainRouter } from '@routes/mainRouter';
+import { mainRouter } from '@route/mainRouter';
 import React from 'react';
 import { createBrowserRouter, RouterProvider } from 'react-router-dom';
 

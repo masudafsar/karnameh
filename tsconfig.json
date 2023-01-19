@@ -21,28 +21,34 @@
     "jsx": "react-jsx",
     "baseUrl": "./",
     "paths": {
-      "@assets/*": [
+      "@type/*": [
+        "src/types/*"
+      ],
+      "@style/*": [
+        "src/styles/*"
+      ],
+      "@asset/*": [
         "src/assets/*"
       ],
-      "@components/*": [
+      "@component/*": [
         "src/components/*"
       ],
-      "@layouts/*": [
+      "@layout/*": [
         "src/layouts/*"
       ],
-      "@hooks/*": [
+      "@hook/*": [
         "src/hooks/*"
       ],
-      "@helpers/*": [
+      "@helper/*": [
         "src/helpers/*"
       ],
-      "@providers/*": [
+      "@provider/*": [
         "src/providers/*"
       ],
-      "@contexts/*": [
+      "@context/*": [
         "src/contexts/*"
       ],
-      "@routes/*": [
+      "@route/*": [
         "src/routes/*"
       ]
     }

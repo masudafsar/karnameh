@@ -6,7 +6,9 @@ function MainLayout() {
   return (
     <main className="bg-secondary-lightest min-h-screen">
       <AppBar />
-      <Outlet />
+      <section className="container mx-auto my-8">
+        <Outlet />
+      </section>
     </main>
   );
 }

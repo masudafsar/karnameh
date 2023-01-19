@@ -36,6 +36,9 @@
       "@layout/*": [
         "src/layouts/*"
       ],
+      "@page/*": [
+        "src/pages/*"
+      ],
       "@hook/*": [
         "src/hooks/*"
       ],

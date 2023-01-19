@@ -2,6 +2,8 @@ import Button from '@component/button';
 import UserMenu from '@component/userMenu';
 import plusIcon from '@iconify/icons-uil/plus';
 import { Icon } from '@iconify/react';
+import { IUserType } from '@type/user.type';
+import db from 'db.json';
 import React from 'react';
 
 interface IProps {}
@@ -17,13 +19,7 @@ function AppBar({}: IProps) {
           <Button onClick={() => {}} prefix={<Icon icon={plusIcon} />}>
             سوال جدید
           </Button>
-          <UserMenu
-            user={{
-              id: '5eee587a-f00c-4541-99bf-dbbeff63f276',
-              fullName: 'مسعود افسر',
-              avatar: '/avatars/5eee587a-f00c-4541-99bf-dbbeff63f276.png',
-            }}
-          />
+          <UserMenu user={db.me} />
         </div>
       </div>
     </header>

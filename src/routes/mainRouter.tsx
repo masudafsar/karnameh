@@ -4,7 +4,7 @@ export const mainRouter: RouteObject[] = [
   {
     path: '*',
     element: (
-      <h1>
+      <h1 className="text-3xl font-bold">
         Page:
         <Outlet />
       </h1>

@@ -1,5 +1,5 @@
 {
-  "name": "karname",
+  "name": "karnameh",
   "private": true,
   "version": "0.0.0",
   "scripts": {
@@ -9,7 +9,8 @@
     "lint:format": "prettier --loglevel warn --write \"./**/*.{js,jsx,ts,tsx,css,md,json}\"",
     "lint:fix": "eslint ./src --ext .jsx,.js,.ts,.tsx --quiet --fix --ignore-path ./.gitignore",
     "lint": "npm run lint:format && npm run lint:fix",
-    "type-check": "tsc"
+    "type-check": "tsc",
+    "api": "json-server --watch db.json --port 3001"
   },
   "dependencies": {
     "@reduxjs/toolkit": "^1.9.1",

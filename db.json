@@ -1,0 +1,33 @@
+{
+  "user": {},
+  "questions": [
+    {
+      "id": "d038168b-5d10-4f84-a49a-5900b8c09582",
+      "title": "TITLE",
+      "body": "QUESTION",
+      "created_at": "CREATE_AT",
+      "author": {
+        "id": "b4fe3511-6dae-4dc1-8628-bd0c424146b3",
+        "full_name": "AUTHOR_FULL_NAME",
+        "avatar": "/avatars/avatar-02.png"
+      },
+      "answers": [
+        {
+          "id": "d97a29d2-a1e0-466f-8c71-571233671b2d",
+          "title": "TITLE",
+          "body": "QUESTION",
+          "created_at": "CREATE_AT",
+          "author": {
+            "id": "c50efa74-7a16-4804-8bf7-cf432745c31f",
+            "full_name": "AUTHOR_FULL_NAME",
+            "avatar": "/avatars/avatar-03.png"
+          },
+          "rates": {
+            "happy_count": 0,
+            "sad_count": 0
+          }
+        }
+      ]
+    }
+  ]
+}

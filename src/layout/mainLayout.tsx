@@ -4,7 +4,7 @@ import { Outlet } from 'react-router-dom';
 
 function MainLayout() {
   return (
-    <main className="bg-SecondaryLightest min-h-screen">
+    <main className="bg-secondary-lightest min-h-screen">
       <AppBar />
       <Outlet />
     </main>

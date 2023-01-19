@@ -1,22 +1,19 @@
 import { Outlet, RouteObject } from 'react-router-dom';
 
+import MainLayout from '../layout/mainLayout';
+
 export const mainRouter: RouteObject[] = [
   {
     path: '*',
-    element: (
-      <h1 className="text-3xl font-bold">
-        Page:
-        <Outlet />
-      </h1>
-    ),
+    element: <MainLayout />,
     children: [
       {
         path: 'about',
-        element: <>About</>,
+        element: <>درباره</>,
       },
       {
         path: '*',
-        element: <>Home</>,
+        element: <>خانه</>,
       },
     ],
   },

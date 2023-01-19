@@ -21,14 +21,28 @@ module.exports = {
       base: ['.875rem', '1.25rem'],
     },
     colors: {
-      primary: '#27AE60',
-      SecondaryLightest: '#F7F8F9',
-      SecondaryMoreLight: '#9CAEBB',
+      primary: {
+        DEFAULT: '#27AE60',
+        dark: '#229551', // custom
+      },
+      secondary: {
+        DEFAULT: '#F7F8F9',
+        lightest: '#F7F8F9',
+        light: '#9CAEBB',
+      },
+      success: '#66CB9F',
+      error: '#F16063',
       black: '#222222',
       white: '#FFFFFF',
-      grayDarker: '#454545',
-      grayDark: '#777777',
-      grayLightest: '#F9F9F9',
+      gray: {
+        darker: '#454545',
+        dark: '#777777',
+        light: '#E4E9EC',
+        lightest: '#F9F9F9',
+      },
+    },
+    borderRadius: {
+      DEFAULT: '0.375rem',
     },
     extend: {},
   },

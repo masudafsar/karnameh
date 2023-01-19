@@ -23,7 +23,16 @@ function Button({
   prefix,
 }: PropsWithChildren<IProps>) {
   const classes = React.useMemo(() => {
-    const common = ['py-2', 'px-5', 'text-sm', 'text-primary', 'rounded'];
+    const common = [
+      'py-2',
+      'px-5',
+      'text-sm',
+      'text-primary',
+      'rounded-sm',
+      'flex',
+      'gap-2',
+      'items-center',
+    ];
     const outlined = [
       'outline',
       'outline-1',
@@ -41,16 +50,26 @@ function Button({
     if (variant === 'outlined') return cn(common, outlined, className);
   }, [variant, className]);
 
+  function childrenWithAdditionalItems() {
+    return (
+      <>
+        {prefix && <span className="text-[1rem]">{prefix}</span>}
+        {children && <span>{children}</span>}
+        {postfix && <span className="text-[1rem]">{postfix}</span>}
+      </>
+    );
+  }
+
   if (type === 'link') {
     return (
       <Link className={classes} to={href || ''}>
-        {children}
+        {childrenWithAdditionalItems()}
       </Link>
     );
   }
   return (
     <button className={classes} type={type} onClick={onClick}>
-      {children}
+      {childrenWithAdditionalItems()}
     </button>
   );
 }

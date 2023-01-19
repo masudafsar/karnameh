@@ -42,7 +42,9 @@ module.exports = {
       },
     },
     borderRadius: {
-      DEFAULT: '0.375rem',
+      sm: '0.375rem',
+      DEFAULT: '0.5rem',
+      full: '9999px',
     },
     extend: {},
   },

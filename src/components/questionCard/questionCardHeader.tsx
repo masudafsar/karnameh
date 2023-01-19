@@ -29,19 +29,19 @@ function QuestionCardHeader({
         <div className="flex items-center gap-2">
           <div className="text-sm">
             <span className="text-gray-dark">ساعت : </span>
-            <span className="">{format(new Date(createdAt), 'H:m')}</span>
+            <span className="font-bold">{format(new Date(createdAt), 'H:m')}</span>
           </div>
           <div className="text-sm border-l border-secondary-light h-full w-0 overflow-hidden">
             &nbsp;
           </div>
           <div className="text-sm">
             <span className="text-gray-dark">تاریخ : </span>
-            <span className="">{format(new Date(createdAt), 'yyyy/M/d')}</span>
+            <span className="font-bold">{format(new Date(createdAt), 'yyyy/M/d')}</span>
           </div>
         </div>
         <div className="flex items-center gap-1">
           <Icon className="text-secondary-light" icon={commentLines} />
-          <span className="text-sm text-gray-dark">{answersCount}</span>
+          <span className="text-sm text-gray-dark font-bold">{answersCount}</span>
         </div>
       </div>
     </div>

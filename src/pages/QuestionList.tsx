@@ -1,11 +1,17 @@
-import { IQuestionType } from '@type/question.type';
+import QuestionCard from '@component/questionCard';
 import db from 'db.json';
 import React from 'react';
 
 interface IProps {}
 
 function QuestionList({}: IProps) {
-  return <>صفحه لیست سولات</>;
+  return (
+    <div className="flex flex-col gap-5">
+      {db.questions.map(question => (
+        <QuestionCard key={question.id} question={question} />
+      ))}
+    </div>
+  );
 }
 
 export default QuestionList;

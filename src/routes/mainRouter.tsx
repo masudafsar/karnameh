@@ -1,6 +1,7 @@
-import { Outlet, RouteObject } from 'react-router-dom';
-
-import MainLayout from '../layout/mainLayout';
+import MainLayout from '@layout/mainLayout';
+import QuestionList from '@page/QuestionList';
+import QuestionSingle from '@page/QuestionSingle';
+import { RouteObject } from 'react-router-dom';
 
 export const mainRouter: RouteObject[] = [
   {
@@ -8,12 +9,12 @@ export const mainRouter: RouteObject[] = [
     element: <MainLayout />,
     children: [
       {
-        path: 'about',
-        element: <>درباره</>,
+        path: ':id',
+        element: <QuestionSingle />,
       },
       {
         path: '*',
-        element: <>خانه</>,
+        element: <QuestionList />,
       },
     ],
   },

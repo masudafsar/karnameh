@@ -1,3 +1,4 @@
+import '@asset/fonts/iranyekan/font.css';
 import '@style/base.css';
 
 import React from 'react';

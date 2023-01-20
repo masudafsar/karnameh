@@ -1,8 +1,7 @@
 import Avatar from '@component/avatar';
-import { convertDigitsToPersian } from '@helper/stringUtils';
+import DateTime from '@component/dateTime';
+import Status from '@component/status';
 import commentLines from '@iconify/icons-uil/comment-lines';
-import { Icon } from '@iconify/react';
-import { format } from 'date-fns-jalali';
 import React from 'react';
 
 interface IProps {
@@ -27,27 +26,13 @@ function QuestionCardHeader({
         <h2 className="text-h2 font-bold">{title}</h2>
       </div>
       <div className="flex items-center gap-5">
-        <div className="flex items-center gap-2">
-          <div className="text-sm">
-            <span className="text-gray-dark">ساعت : </span>
-            <span className="font-bold">
-              {convertDigitsToPersian(format(new Date(createdAt), 'H:m'))}
-            </span>
-          </div>
-          <div className="text-sm border-l border-secondary-light h-full w-0 overflow-hidden">
-            &nbsp;
-          </div>
-          <div className="text-sm">
-            <span className="text-gray-dark">تاریخ : </span>
-            <span className="font-bold">
-              {convertDigitsToPersian(format(new Date(createdAt), 'yyyy/M/d'))}
-            </span>
-          </div>
-        </div>
-        <div className="flex items-center gap-1">
-          <Icon className="text-secondary-light" icon={commentLines} />
-          <span className="text-sm text-gray-dark font-bold">{answersCount}</span>
-        </div>
+        <DateTime timestamp={createdAt} />
+        <Status
+          icon={commentLines}
+          iconColorClass="text-secondary-light"
+          labelColorClass="text-gray-dark"
+          label={answersCount}
+        />
       </div>
     </div>
   );

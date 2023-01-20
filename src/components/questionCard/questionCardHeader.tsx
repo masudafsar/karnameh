@@ -1,4 +1,5 @@
 import Avatar from '@component/avatar';
+import { convertDigitsToPersian } from '@helper/stringUtils';
 import commentLines from '@iconify/icons-uil/comment-lines';
 import { Icon } from '@iconify/react';
 import { format } from 'date-fns-jalali';
@@ -20,7 +21,7 @@ function QuestionCardHeader({
   answersCount,
 }: IProps) {
   return (
-    <div className="flex items-center justify-between px-4 py-2 bg-white rounded shadow">
+    <div className="flex items-center justify-between px-4 py-3 bg-white rounded shadow">
       <div className="flex items-center gap-4">
         <Avatar src={avatar} alt={fullName} variant="rounded" />
         <h2 className="text-h2 font-bold">{title}</h2>
@@ -29,14 +30,18 @@ function QuestionCardHeader({
         <div className="flex items-center gap-2">
           <div className="text-sm">
             <span className="text-gray-dark">ساعت : </span>
-            <span className="font-bold">{format(new Date(createdAt), 'H:m')}</span>
+            <span className="font-bold">
+              {convertDigitsToPersian(format(new Date(createdAt), 'H:m'))}
+            </span>
           </div>
           <div className="text-sm border-l border-secondary-light h-full w-0 overflow-hidden">
             &nbsp;
           </div>
           <div className="text-sm">
             <span className="text-gray-dark">تاریخ : </span>
-            <span className="font-bold">{format(new Date(createdAt), 'yyyy/M/d')}</span>
+            <span className="font-bold">
+              {convertDigitsToPersian(format(new Date(createdAt), 'yyyy/M/d'))}
+            </span>
           </div>
         </div>
         <div className="flex items-center gap-1">

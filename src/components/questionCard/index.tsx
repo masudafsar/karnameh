@@ -1,3 +1,4 @@
+import Card from '@component/card';
 import QuestionCardContent from '@component/questionCard/questionCardContent';
 import QuestionCardFooter from '@component/questionCard/questionCardFooter';
 import QuestionCardHeader from '@component/questionCard/questionCardHeader';
@@ -10,17 +11,19 @@ interface IProps {
 
 function QuestionCard({ question }: IProps) {
   return (
-    <div className="bg-gray-lightest shadow rounded overflow-hidden">
-      <QuestionCardHeader
-        fullName={question.author.fullName}
-        avatar={question.author.avatar}
-        title={question.title}
-        createdAt={question.createdAt}
-        answersCount={question.answers.length}
-      />
-      <QuestionCardContent body={question.body} />
-      <QuestionCardFooter id={question.id} />
-    </div>
+    <Card
+      header={
+        <QuestionCardHeader
+          fullName={question.author.fullName}
+          avatar={question.author.avatar}
+          title={question.title}
+          createdAt={question.createdAt}
+          answersCount={question.answers.length}
+        />
+      }
+      content={<QuestionCardContent body={question.body} />}
+      footer={<QuestionCardFooter id={question.id} />}
+    />
   );
 }
 

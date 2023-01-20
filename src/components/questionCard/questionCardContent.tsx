@@ -1,9 +1,11 @@
 import React from 'react';
+
 interface IProps {
   body: string;
 }
 
 function QuestionCardContent({ body }: IProps) {
-  return <div className="m-4">{body}</div>;
+  return <>{body}</>;
 }
+
 export default QuestionCardContent;

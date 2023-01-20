@@ -18,21 +18,23 @@ function Modal({ title, children, open, onDismiss }: PropsWithChildren<IProps>) 
       onClick={onDismiss}
     >
       <div
-        className="w-full max-w-[700px] bg-gray-lightest rounded overflow-hidden shadow"
+        className="w-full max-w-[700px] max-h-screen overflow-y-scroll scrollbar-hide p-4"
         onClick={e => {
           e.stopPropagation();
         }}
       >
-        <div className="bg-white flex justify-between items-center py-3 px-6 shadow">
-          <h2 className="text-h2 font-bold">{title}</h2>
-          <Button
-            variant="text"
-            className="!text-black !p-2 !rounded-full"
-            onClick={onDismiss}
-            prefix={<Icon icon={timesIcon} />}
-          />
+        <div className="bg-gray-lightest rounded overflow-hidden shadow">
+          <div className="bg-white flex justify-between items-center py-3 px-6 shadow">
+            <h2 className="text-h2 font-bold">{title}</h2>
+            <Button
+              variant="text"
+              className="!text-black !p-2 !rounded-full"
+              onClick={onDismiss}
+              prefix={<Icon icon={timesIcon} />}
+            />
+          </div>
+          <div className="p-5">{children}</div>
         </div>
-        <div className="p-5">{children}</div>
       </div>
     </div>
   );

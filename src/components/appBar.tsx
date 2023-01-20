@@ -37,8 +37,8 @@ function AppBar({}: IProps) {
   }, []);
 
   return (
-    <header className="bg-white px-4 py-3 shadow">
-      <div className="container mx-auto flex justify-between items-center">
+    <header className="bg-white shadow">
+      <div className="container px-4 py-3 mx-auto flex justify-between items-center">
         <div>
           <h1 className="text-h1 font-bolder">
             <Link to="/">لیست سوالات</Link>

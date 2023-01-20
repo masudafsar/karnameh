@@ -1,7 +1,8 @@
 import Avatar from '@component/avatar';
 import DateTime from '@component/dateTime';
 import Status from '@component/status';
-import commentLines from '@iconify/icons-uil/comment-lines';
+import frownIcon from '@iconify/icons-uil/frown';
+import smileIcon from '@iconify/icons-uil/smile';
 import React from 'react';
 
 interface IProps {
@@ -9,15 +10,17 @@ interface IProps {
   createdAt: number;
   avatar: string;
   fullName: string;
-  answersCount: number;
+  happyRateCount: number;
+  sadRateCount: number;
 }
 
-function QuestionCardHeader({
+function AnswerCardHeader({
   title,
   createdAt,
   avatar,
   fullName,
-  answersCount,
+  happyRateCount,
+  sadRateCount,
 }: IProps) {
   return (
     <>
@@ -28,14 +31,20 @@ function QuestionCardHeader({
       <div className="flex items-center gap-5">
         <DateTime timestamp={createdAt} />
         <Status
-          icon={commentLines}
+          icon={smileIcon}
+          iconColorClass="text-success"
+          labelColorClass="text-gray-dark"
+          label={happyRateCount}
+        />
+        <Status
+          icon={frownIcon}
           iconColorClass="text-secondary-light"
           labelColorClass="text-gray-dark"
-          label={answersCount}
+          label={sadRateCount}
         />
       </div>
     </>
   );
 }
 
-export default QuestionCardHeader;
+export default AnswerCardHeader;

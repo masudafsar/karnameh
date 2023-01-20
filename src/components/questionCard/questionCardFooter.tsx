@@ -6,11 +6,11 @@ interface IProps {
 
 function QuestionCardFooter({ id }: IProps) {
   return (
-    <div className="m-4 flex justify-end">
+    <>
       <Button variant="outlined" type="link" href={`/${id}`}>
         مشاهده جزییات
       </Button>
-    </div>
+    </>
   );
 }
 export default QuestionCardFooter;

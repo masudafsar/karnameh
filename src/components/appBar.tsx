@@ -4,7 +4,8 @@ import UserMenu from '@component/userMenu';
 import { ModalContext } from '@context/modalContext';
 import plusIcon from '@iconify/icons-uil/plus';
 import { Icon } from '@iconify/react';
-import db from 'db.json';
+import UserServices from '@service/userServices';
+import { IUserType } from '@type/user.type';
 import React, { useContext } from 'react';
 import { Link } from 'react-router-dom';
 
@@ -12,8 +13,9 @@ interface IProps {}
 
 function AppBar({}: IProps) {
   const { setTitle, setOpen, setContent } = useContext(ModalContext);
+  const [currentUser, setCurrentUser] = React.useState<IUserType>();
 
-  React.useEffect(() => {
+  function openNewQuestionModal() {
     setTitle('ایجاد پاسخ جدید');
     setContent(
       <NewQuestionForm
@@ -22,6 +24,16 @@ function AppBar({}: IProps) {
         }}
       />,
     );
+    setOpen(true);
+  }
+
+  async function loadCurrentUserInfo() {
+    const userInfo = await UserServices.getCurrentUser();
+    setCurrentUser(userInfo.data);
+  }
+
+  React.useEffect(() => {
+    loadCurrentUserInfo();
   }, []);
 
   return (
@@ -33,15 +45,10 @@ function AppBar({}: IProps) {
           </h1>
         </div>
         <div className="gap-1 flex">
-          <Button
-            onClick={() => {
-              setOpen(true);
-            }}
-            prefix={<Icon icon={plusIcon} />}
-          >
+          <Button onClick={openNewQuestionModal} prefix={<Icon icon={plusIcon} />}>
             سوال جدید
           </Button>
-          <UserMenu user={db.me} />
+          {currentUser && <UserMenu user={currentUser} />}
         </div>
       </div>
     </header>

@@ -53,6 +53,9 @@
       ],
       "@route/*": [
         "src/routes/*"
+      ],
+      "@service/*": [
+        "src/services/*"
       ]
     }
   },

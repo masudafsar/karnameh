@@ -2,7 +2,8 @@ import AnswerCard from '@component/answerCard';
 import Button from '@component/button';
 import FormTextArea from '@component/formTextArea';
 import QuestionCard from '@component/questionCard';
-import db from 'db.json';
+import QuestionService from '@service/questionService';
+import { IQuestionType } from '@type/question.type';
 import React from 'react';
 import { useParams } from 'react-router-dom';
 
@@ -10,7 +11,16 @@ interface IProps {}
 
 function QuestionSingle({}: IProps) {
   const { id } = useParams();
-  const question = db.questions.find(item => item.id === id);
+  const [question, setQuestion] = React.useState<IQuestionType>();
+
+  async function loadAllQuestions() {
+    const questionsResp = await QuestionService.getQuestion(`${id}`);
+    setQuestion(questionsResp.data);
+  }
+
+  React.useEffect(() => {
+    loadAllQuestions();
+  }, []);
 
   return (
     <>

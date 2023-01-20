@@ -1,3 +1,4 @@
+import { convertTextToParagraph } from '@helper/stringUtils';
 import React from 'react';
 
 interface IProps {
@@ -5,7 +6,7 @@ interface IProps {
 }
 
 function QuestionCardContent({ body }: IProps) {
-  return <>{body}</>;
+  return <>{convertTextToParagraph(body, 'mb-2')}</>;
 }
 
 export default QuestionCardContent;

@@ -7,9 +7,10 @@ import React from 'react';
 
 interface IProps {
   question: IQuestionType;
+  disableAction?: boolean;
 }
 
-function QuestionCard({ question }: IProps) {
+function QuestionCard({ question, disableAction = false }: IProps) {
   return (
     <Card
       header={
@@ -22,7 +23,7 @@ function QuestionCard({ question }: IProps) {
         />
       }
       content={<QuestionCardContent body={question.body} />}
-      footer={<QuestionCardFooter id={question.id} />}
+      footer={!disableAction && <QuestionCardFooter id={question.id} />}
     />
   );
 }

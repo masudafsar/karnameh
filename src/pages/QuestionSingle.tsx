@@ -12,7 +12,7 @@ function QuestionSingle({}: IProps) {
 
   return (
     <>
-      {question && <QuestionCard question={question} />}
+      {question && <QuestionCard question={question} disableAction />}
       {question && question.answers && (
         <>
           <h3 className="text-h1 font-bolder mt-5 mb-4">پاسخ‌ها</h3>

@@ -33,3 +33,11 @@ export function convertDigitsToEnglish(str: string) {
     englishDigit,
   );
 }
+
+export function convertTextToParagraph(str: string, className?: string) {
+  return str.split('\n').map((item, index) => (
+    <p className={className} key={index}>
+      {item}
+    </p>
+  ));
+}

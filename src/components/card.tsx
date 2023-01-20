@@ -13,7 +13,7 @@ function Card({ header, content, footer }: IProps) {
         {header}
       </div>
       <div className="m-4">{content}</div>
-      <div className="m-4 flex justify-end">{footer}</div>
+      <div className="m-4 flex justify-end gap-4">{footer}</div>
     </div>
   );
 }

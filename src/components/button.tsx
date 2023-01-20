@@ -32,17 +32,16 @@ function Button({
       'flex',
       'gap-2',
       'items-center',
+      'border-primary',
+      'hover:border-primary-dark',
     ];
     const outlined = [
-      'outline',
-      'outline-1',
-      'outline-primary',
+      'border',
       'text-primary',
       'hover:bg-gray-light',
       'hover:text-primary-dark',
-      'hover:outline-primary-dark',
     ];
-    const contained = ['bg-primary', 'text-white', 'hover:bg-primary-dark'];
+    const contained = ['border', 'bg-primary', 'text-white', 'hover:bg-primary-dark'];
     const text = ['hover:bg-gray-light', 'hover:text-primary-dark'];
 
     if (variant === 'text') return cn(common, text, className);

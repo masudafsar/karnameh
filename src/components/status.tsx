@@ -14,7 +14,7 @@ function Status({ className, label, labelColorClass, icon, iconColorClass }: IPr
   return (
     <div className={cn(['flex', 'items-center', 'gap-1'], className)}>
       {icon && <Icon className={iconColorClass} icon={icon} />}
-      {label && (
+      {label !== undefined && (
         <span className={cn(['text-sm', 'font-bold'], labelColorClass)}>{label}</span>
       )}
     </div>

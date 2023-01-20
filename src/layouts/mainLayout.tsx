@@ -14,7 +14,7 @@ function MainLayout() {
       )}
     >
       <AppBar />
-      <section className="container mx-auto py-8">
+      <section className="container mx-auto py-8 px-4">
         <Outlet />
       </section>
     </main>

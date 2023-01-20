@@ -1,5 +1,6 @@
 import AnswerCard from '@component/answerCard';
 import Button from '@component/button';
+import FormTextArea from '@component/formTextArea';
 import QuestionCard from '@component/questionCard';
 import db from 'db.json';
 import React from 'react';
@@ -31,20 +32,18 @@ function QuestionSingle({}: IProps) {
         }}
       >
         <h3 className="text-h1 font-bolder mt-5 mb-4">پاسخ خود را ثبت کنید</h3>
-        <div className="mb-8">
-          <label className="flex flex-col">
-            <span className="text-sm font-bold mb-2">پاسخ خود را بنویسید</span>
-            <textarea
-              rows={8}
-              placeholder="متن پاسخ"
-              className="py-3 px-4 mb-2 resize-y bg-white border border-gray-light rounded-sm"
-            />
-          </label>
-          <p className="text-sm text-error">متن پاسخ الزامی می‌باشد</p>
+        <FormTextArea
+          label="پاسخ خود را بنویسید"
+          placeholder="متن پاسخ"
+          errorText="متن پاسخ الزامی می‌باشد"
+          hasError={false}
+          onChange={() => {}}
+        />
+        <div className="mt-8">
+          <Button variant="contained" type="submit">
+            ارسال پاسخ
+          </Button>
         </div>
-        <Button variant="contained" type="submit">
-          ارسال پاسخ
-        </Button>
       </form>
     </>
   );
